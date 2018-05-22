@@ -25,7 +25,8 @@ func LatestVersions(releases []*semver.Version, minVersion *semver.Version) []*s
 	var versionSlice []*semver.Version
 
 	for _, releasedVersion := range releases {
-		if minVersion.LessThan(*releasedVersion) {
+		//ignore pre-releases
+		if releasedVersion.PreRelease == "" && minVersion.LessThan(*releasedVersion) {
 			// versionSlice = append(versionSlice, releasedVersion)
 			versionSlice = insertVersion(versionSlice, releasedVersion)
 		}

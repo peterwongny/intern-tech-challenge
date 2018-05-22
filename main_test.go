@@ -65,7 +65,7 @@ func TestLatestVersions(t *testing.T) {
 		},
 		{
 			versionSlice:   []string{"1.11.0-alpha.2", "1.11.0-alpha.1", "1.10.3", "1.10.2", "1.10.1", "1.9.7", "1.8.13", "1.8.12", "1.8.11", "1.7.16"},
-			expectedResult: []string{"1.11.0-alpha.2", "1.10.3", "1.9.7", "1.8.13"},
+			expectedResult: []string{"1.10.3", "1.9.7", "1.8.13"},
 			minVersion:     semver.New("1.8.0"),
 		},
 	}
